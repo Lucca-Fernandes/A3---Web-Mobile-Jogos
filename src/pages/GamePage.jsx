@@ -132,7 +132,7 @@ function GamePage() {
                     <iframe
                         title="GameMaker Game"
                         style={{ width: '100%', height: '100%', border: 'none', objectFit: 'contain' }}
-                        src="http://localhost:8080/game_ods.html"
+                        src="https://game17ods.netlify.app/"
                         allowFullScreen
                     />
                 </Box>
