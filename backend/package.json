@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "node server.js",
-    "build": "npm install --build-from-source --sqlite3-binary-name=sqlite3 && npm install"
+    "build": "npm install sqlite3 --build-from-source"
   },
   "dependencies": {
     "cors": "^2.8.5",
