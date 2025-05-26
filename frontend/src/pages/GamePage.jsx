@@ -279,17 +279,23 @@ function GamePage() {
                                         <TableRow key={score.id}>
                                             <TableCell sx={{ color: '#ffffff' }}>{score.name}</TableCell>
                                             <TableCell sx={{ color: '#ffffff' }}>{score.time}</TableCell>
-<TableCell sx={{ color: '#ffffff' }}>
-    {new Date(score.date_added).toLocaleString('pt-BR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-    })}
-</TableCell>                                <TableCell>
+                                            <TableCell sx={{ color: '#ffffff' }}>
+                                                {(() => {
+                                                    const date = new Date(score.date_added);
+                                                    // Ajustar para o fuso horário do Brasil (-03:00)
+                                                    const offset = -3 * 60; // -3 horas em minutos
+                                                    const localDate = new Date(date.getTime() + offset * 60 * 1000);
+                                                    return localDate.toLocaleString('pt-BR', {
+                                                        day: '2-digit',
+                                                        month: '2-digit',
+                                                        year: 'numeric',
+                                                        hour: '2-digit',
+                                                        minute: '2-digit',
+                                                        second: '2-digit',
+                                                        hour12: false
+                                                    });
+                                                })()}
+                                            </TableCell>                           <TableCell>
                                                 <Button
                                                     variant="contained"
                                                     color="error"
